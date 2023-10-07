@@ -19,8 +19,9 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
-app.post('/upload', upload.single('video'), async (req, res) => {
-    const videoData = req.file.buffer;
+app.post('/api/upload', async (req, res) => {
+    console.log("hi")
+    console.log(req)
 
     res.sendStatus(200);
 })
