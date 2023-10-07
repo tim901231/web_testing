@@ -19,9 +19,9 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
-app.post('/api/upload', async (req, res) => {
+app.post('/api/upload', upload.single('data'), async (req, res) => {
     console.log("hi")
-    console.log(req)
+    console.log(req.file)
 
     res.sendStatus(200);
 })

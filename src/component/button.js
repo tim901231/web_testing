@@ -5,8 +5,10 @@ import instance from "./api";
 const Multi = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const handleSubmit = async (e) => {
+
     let formData = new FormData();
     formData.append("data", selectedFile);
+    
     const response = await instance.post("/upload", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     });
